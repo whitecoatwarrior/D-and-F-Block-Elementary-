@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Topic Wise Portal - D & F Block Elements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #1e3a8a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --background: #f0f9ff;
+            --card-bg: #ffffff;
+            --text-primary: #1e3a8a;
+            --text-secondary: #4b5563;
+            --border-radius: 5px;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.2s ease;
+            --compact-spacing: 3px;
+        }
+
+        .dark-mode {
+            --primary: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #1e293b;
+            --dark: #f1f5f9;
+            --background: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+            font-size: 8.1px;
+            line-height: 1.1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4.86px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6.48px;
+            border-radius: var(--border-radius);
+            margin-bottom: 6.48px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            animation: pulse 15s infinite linear;
+        }
+
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 4.32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo h1 {
+            font-size: 0.972rem;
+            font-weight: 800;
+            margin-bottom: 1.62px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo p {
+            font-weight: 500;
+            font-size: 0.486rem;
+            opacity: 0.9;
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-content h1 {
+            font-size: 0.648rem;
+            margin-bottom: 4.32px;
+            color: #ffd700;
+        }
+
+        .header-content p {
+            font-size: 0.486rem;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 15.12px;
+            height: 15.12px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            top: 6.48px;
+            right: 6.48px;
+            z-index: 10;
+        }
+
+        .menu-toggle span {
+            width: 15.12px;
+            height: 1.62px;
+            background: white;
+            border-radius: 1.62px;
+            transition: var(--transition);
+            position: relative;
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(3.24px, 3.24px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4.32px, -4.32px);
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 6.48px;
+            position: relative;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+        }
+
+        .nav-header h2 {
+            font-size: 0.729rem;
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: none;
+            width: 25.92px;
+            height: 12.96px;
+            border-radius: 12.96px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1.62px;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle span {
+            width: 9.72px;
+            height: 9.72px;
+            border-radius: 50%;
+            background: var(--primary);
+            position: absolute;
+            transition: var(--transition);
+            left: 1.62px;
+        }
+
+        .theme-toggle.dark span {
+            left: calc(100% - 11.34px);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2.43px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+            padding: 4.05px 4.86px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Panel Styles */
+        .panel {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.86px;
+            box-shadow: var(--shadow);
+            margin-bottom: 6.48px;
+            transition: var(--transition);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+            padding-bottom: 4.05px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .panel-title {
+            font-size: 0.648rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+        }
+
+        .panel-actions {
+            display: flex;
+            gap: 2.43px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.43px;
+            padding: 2.43px 4.86px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #0da271;
+            transform: translateY(-1px);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.86px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 4.86px;
+        }
+
+        .card:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 2.43px 6.48px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+            margin-bottom: 4.05px;
+            padding-bottom: 4.05px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 0.567rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 4.86px;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 9.72px 0;
+            margin-top: auto;
+            font-size: 0.486rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 6.48px;
+            margin-top: 6.48px;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6.48px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-6.48px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* MCQ Card Styles */
+        .mcq-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .mcq-info {
+            flex-grow: 1;
+            margin-bottom: 4.86px;
+        }
+
+        .mcq-id {
+            font-weight: 700;
+            font-size: 0.567rem;
+            color: var(--primary);
+            margin-bottom: 1.62px;
+        }
+
+        .mcq-subject {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.43px;
+        }
+
+        .mcq-chapter {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.43px;
+            font-weight: 600;
+        }
+
+        .mcq-details {
+            font-size: 0.405rem;
+            color: var(--text-secondary);
+            margin-bottom: 4.05px;
+        }
+
+        .start-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 4.05px 6.48px;
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .start-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Stats Panel */
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(64.8px, 1fr));
+            gap: 4.05px;
+            margin-bottom: 4.86px;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.05px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-value {
+            font-size: 0.729rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.405rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Explanation Section Styles */
+        .explanation-section {
+            margin-bottom: 12.15px;
+            padding: 9.72px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .explanation-header {
+            display: flex;
+            align-items: center;
+            gap: 6.48px;
+            margin-bottom: 6.48px;
+            padding-bottom: 4.86px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation-icon {
+            width: 24.3px;
+            height: 24.3px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.81rem;
+        }
+
+        .explanation-title {
+            font-size: 0.729rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .explanation-content {
+            font-size: 0.567rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        .explanation-content h4 {
+            font-size: 0.648rem;
+            margin: 6.48px 0 3.24px;
+            color: var(--primary);
+        }
+
+        .explanation-content p {
+            margin-bottom: 4.86px;
+        }
+
+        .explanation-content ul, .explanation-content ol {
+            margin-left: 16.2px;
+            margin-bottom: 6.48px;
+        }
+
+        .explanation-content li {
+            margin-bottom: 2.43px;
+        }
+
+        .mechanism-diagram {
+            text-align: center;
+            margin: 9.72px 0;
+            padding: 6.48px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+        }
+
+        .mechanism-diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .key-concept {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3.24px solid var(--primary);
+            padding: 6.48px;
+            margin: 6.48px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .key-concept-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3.24px;
+            font-size: 0.567rem;
+        }
+
+        /* MCQ Detail Styles */
+        .mcq-detail-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 9.72px;
+            margin-bottom: 9.72px;
+            box-shadow: var(--shadow);
+        }
+
+        .mcq-question {
+            font-size: 0.648rem;
+            font-weight: 600;
+            margin-bottom: 6.48px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .mcq-options {
+            margin-bottom: 9.72px;
+        }
+
+        .mcq-option {
+            padding: 4.05px 6.48px;
+            margin-bottom: 3.24px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            font-size: 0.567rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 2.43px solid transparent;
+        }
+
+        .mcq-option:hover {
+            background: rgba(26, 86, 219, 0.05);
+        }
+
+        .mcq-option.selected {
+            border-left-color: var(--primary);
+            background: rgba(26, 86, 219, 0.1);
+        }
+
+        .mcq-option.correct {
+            border-left-color: var(--success);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .mcq-option.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .mcq-explanation {
+            margin-top: 9.72px;
+            padding: 6.48px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            font-size: 0.486rem;
+            line-height: 1.4;
+            display: none;
+        }
+
+        .mcq-explanation.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .explanation-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4.05px;
+            font-size: 0.567rem;
+        }
+
+        .explanation-content {
+            color: var(--text-secondary);
+        }
+
+        .mcq-actions {
+            display: flex;
+            gap: 4.86px;
+            margin-top: 6.48px;
+        }
+
+        /* Progress Tracking */
+        .progress-section {
+            margin-top: 9.72px;
+            padding: 6.48px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+        }
+
+        .progress-title {
+            font-size: 0.648rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-stats {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar {
+            height: 6.48px;
+            background: #e5e7eb;
+            border-radius: 3.24px;
+            overflow: hidden;
+            margin-bottom: 4.86px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            border-radius: 3.24px;
+            transition: width 0.5s ease;
+        }
+
+        /* Welcome Animation - Enhanced */
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1e3a8a, #1a56db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.8s ease;
+        }
+
+        .welcome-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: white;
+            padding: 12.15px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9.72px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4.86px 16.2px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-content h2 {
+            font-size: 1.458rem;
+            margin-bottom: 9.72px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 2.5s infinite;
+        }
+
+        .welcome-content p {
+            font-size: 0.648rem;
+            margin-bottom: 12.15px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .welcome-logo {
+            font-size: 2.025rem;
+            margin-bottom: 12.15px;
+            color: #ffd700;
+            text-shadow: 0 0 12.15px rgba(255, 215, 0, 0.5);
+            animation: pulseWelcome 1.5s infinite;
+        }
+
+        @keyframes pulseWelcome {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* WhatsApp Small Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 12.15px;
+            right: 12.15px;
+            background: #25D366;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.053rem;
+            box-shadow: 0 2.43px 6.48px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 3.24px 8.1px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .main-nav {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                padding: 4.86px;
+                z-index: 100;
+                width: 129.6px;
+                display: none;
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 4.05px;
+            }
+            
+            header {
+                padding: 4.86px;
+            }
+            
+            .logo h1 {
+                font-size: 0.81rem;
+            }
+            
+            .panel {
+                padding: 4.86px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 2.43px;
+            }
+            
+            .panel-actions {
+                flex-direction: column;
+            }
+            
+            .welcome-content {
+                padding: 9.72px;
+                margin: 6.48px;
+            }
+            
+            .welcome-content h2 {
+                font-size: 1.053rem;
+            }
+            
+            .welcome-content p {
+                font-size: 0.567rem;
+            }
+            
+            .welcome-logo {
+                font-size: 1.62rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 3.24px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 1.62px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+
+        /* Table Styles */
+        .config-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 9.72px 0;
+            font-size: 0.486rem;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .config-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 4.86px;
+            text-align: center;
+        }
+
+        .config-table td {
+            padding: 4.05px;
+            border: 0.81px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .config-table tr:nth-child(even) {
+            background: var(--light);
+        }
+
+        .config-table tr:hover {
+            background: rgba(26, 86, 219, 0.05);
+        }
+
+        .exception-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 3.24px solid var(--warning);
+            padding: 6.48px;
+            margin: 6.48px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .exception-title {
+            font-weight: 700;
+            color: var(--warning);
+            margin-bottom: 3.24px;
+            font-size: 0.567rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Animation -->
+    <div class="welcome-overlay" id="welcome-overlay">
+        <div class="welcome-content scale-in">
+            <div class="welcome-logo">
+                <i class="fas fa-atom"></i>
+            </div>
+            <h2>Chemistry Topic Wise Portal</h2>
+            <p>Master Electronic Structure of D and F Block Elements with comprehensive explanations and MCQs.</p>
+            <button class="btn btn-primary" id="start-btn" style="padding: 4.86px 9.72px; font-size: 0.648rem;">
+                Get Started <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Small Button -->
+    <a href="https://whatsapp.com/channel/0029VbBeueg0QeajGumGWb0f" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="container">
+        <header>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="logo">
+                <h1>Chemistry Topic Wise Portal</h1>
+                <p>Electronic Structure of D & F Block Elements</p>
+            </div>
+            
+            <div class="header-content">
+                <h1>Comprehensive Explanations & Practice MCQs</h1>
+                <p>Master key inorganic chemistry concepts with detailed explanations and interactive questions</p>
+            </div>
+        </header>
+
+        <div class="nav-container">
+            <div class="nav-header">
+                <h2>Navigation</h2>
+                <button class="theme-toggle" id="theme-toggle">
+                    <span></span>
+                </button>
+            </div>
+            
+            <div class="main-nav" id="main-nav">
+                <button class="nav-btn active" data-tab="d-f-block">
+                    <i class="fas fa-atom"></i>
+                    <span>D & F Block Elements</span>
+                </button>
+                <button class="nav-btn" data-tab="d-f-ions">
+                    <i class="fas fa-bolt"></i>
+                    <span>D & F Block Ions</span>
+                </button>
+                <button class="nav-btn" data-tab="progress">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress Tracking</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-item">
+                <div class="stat-value" id="d-f-block-mcqs">20</div>
+                <div class="stat-label">D & F Block MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="d-f-ions-mcqs">20</div>
+                <div class="stat-label">D & F Ions MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="total-mcqs">40</div>
+                <div class="stat-label">Total MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="completed-mcqs">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <!-- D & F Block Elements Tab -->
+        <div class="tab-content active" id="d-f-block-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="explanation-title">Electronic Structure of D and F Block Elements</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>What are D and F Block Elements?</h4>
+                    <p>D and F block elements are <strong>transition metals</strong> and <strong>inner transition metals</strong> respectively, characterized by the filling of d and f orbitals. These elements exhibit unique properties due to their electronic configurations and incomplete d or f subshells.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Transition Elements</div>
+                        <p>Transition elements are defined as elements that have partially filled d orbitals in their ground state or in any of their common oxidation states. This includes groups 3-12 in the periodic table. The f-block elements (lanthanides and actinides) are sometimes called inner transition elements.</p>
+                    </div>
+                    
+                    <h4>General Electronic Configuration:</h4>
+                    <p><strong>D-block:</strong> (n-1)d<sup>1-10</sup> ns<sup>0-2</sup></p>
+                    <p><strong>F-block:</strong> (n-2)f<sup>1-14</sup> (n-1)d<sup>0-1</sup> ns<sup>2</sup></p>
+                    
+                    <h4>Electronic Configuration of Three Series of d-Block Elements</h4>
+                    
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">3d-elements</th>
+                                <th colspan="2">4d-elements</th>
+                                <th colspan="2">5d-elements</th>
+                            </tr>
+                            <tr>
+                                <th>Elements</th>
+                                <th>Electronic configuration</th>
+                                <th>Elements</th>
+                                <th>Electronic configuration</th>
+                                <th>Elements</th>
+                                <th>Electronic configuration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sc</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>1</sup></td>
+                                <td>Y</td>
+                                <td>[Kr] 5s<sup>2</sup>, 4d<sup>1</sup></td>
+                                <td>La</td>
+                                <td>[Xe], 6s<sup>2</sup>, 5d<sup>1</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Ti</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>2</sup></td>
+                                <td>Zr</td>
+                                <td>[Kr] 5s<sup>2</sup>, 4d<sup>2</sup></td>
+                                <td>Hf</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>3</sup></td>
+                                <td>Nb</td>
+                                <td>[Kr] 5s<sup>1</sup>, 4d<sup>4</sup></td>
+                                <td>Ta</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>3</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Cr</td>
+                                <td>[Ar] 4s<sup>1</sup>, 3d<sup>5</sup></td>
+                                <td>Mo</td>
+                                <td>[Kr] 5s<sup>1</sup>, 4d<sup>5</sup></td>
+                                <td>W</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>4</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Mn</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>5</sup></td>
+                                <td>Tc</td>
+                                <td>[Kr] 5s<sup>2</sup>, 4d<sup>5</sup></td>
+                                <td>Re</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>5</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Fe</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>6</sup></td>
+                                <td>Ru</td>
+                                <td>[Kr] 5s<sup>1</sup>, 4d<sup>7</sup></td>
+                                <td>Os</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>6</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Co</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>7</sup></td>
+                                <td>Rh</td>
+                                <td>[Kr] 5s<sup>1</sup>, 4d<sup>8</sup></td>
+                                <td>Ir</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>7</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Ni</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>8</sup></td>
+                                <td>Pd</td>
+                                <td>[Kr] 5s<sup>0</sup>, 4d<sup>10</sup></td>
+                                <td>Pt</td>
+                                <td>[Xe], 6s<sup>1</sup>, 4f<sup>14</sup>, 5d<sup>9</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Cu</td>
+                                <td>[Ar] 4s<sup>1</sup>, 3d<sup>10</sup></td>
+                                <td>Ag</td>
+                                <td>[Kr] 5s<sup>1</sup>, 4d<sup>10</sup></td>
+                                <td>Au</td>
+                                <td>[Xe], 6s<sup>1</sup>, 4f<sup>14</sup>, 5d<sup>10</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Zn</td>
+                                <td>[Ar] 4s<sup>2</sup>, 3d<sup>10</sup></td>
+                                <td>Cd</td>
+                                <td>[Kr] 5s<sup>2</sup>, 4d<sup>10</sup></td>
+                                <td>Hg</td>
+                                <td>[Xe], 6s<sup>2</sup>, 4f<sup>14</sup>, 5d<sup>10</sup></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>In the lanthanide and actinide series valence shell electrons go to '4f' and '5f' orbitals respectively.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Aufbau Principle</div>
+                        <p>The word "Aufbau" is derived from the German language and can be translated as construct or build up. Aufbau principle states that electrons are filled into atomic orbitals in the increasing order of orbital energy level. According to the Aufbau principle, the available atomic orbitals with the lowest energy state are occupied before those with higher energy state.</p>
+                    </div>
+                    
+                    <div class="exception-box">
+                        <div class="exception-title">Exceptions to Aufbau Principle</div>
+                        <p>The electronic configuration of chromium (Z = 24) is [Ar] 3d<sup>5</sup>, 4s<sup>1</sup> and not [Ar] 3d<sup>4</sup>, 4s<sup>2</sup> as we might expect. A similar break in the pattern is observed for copper, whose electronic configuration is [Ar] 3d<sup>10</sup>, 4s<sup>1</sup>, rather than [Ar] 3d<sup>9</sup>, 4s<sup>2</sup>.</p>
+                        
+                        <div class="mechanism-diagram">
+                            <p><strong>Chromium (Z = 24)</strong></p>
+                            <p>Expected configuration: [Ar] 3d<sup>4</sup> 4s<sup>2</sup></p>
+                            <p>Observed configuration: [Ar] 3d<sup>5</sup> 4s<sup>1</sup></p>
+                            
+                            <p><strong>Copper (Z = 29)</strong></p>
+                            <p>Expected configuration: [Ar] 3d<sup>9</sup> 4s<sup>2</sup></p>
+                            <p>Observed configuration: [Ar] 3d<sup>10</sup> 4s<sup>1</sup></p>
+                        </div>
+                        
+                        <p>The reason for these irregularities is that a slightly greater stability is associated with the half-filled (3d<sup>5</sup>) and completely filled (3d<sup>10</sup>) subshells.</p>
+                    </div>
+                    
+                    <h4>Characteristics of D-Block Elements:</h4>
+                    <ol>
+                        <li><strong>Variable Oxidation States:</strong> Due to similar energies of (n-1)d and ns orbitals, these elements show multiple oxidation states.</li>
+                        <li><strong>Formation of Colored Compounds:</strong> Incomplete d subshell allows d-d transitions when ligands approach, absorbing specific wavelengths of light.</li>
+                        <li><strong>Magnetic Properties:</strong> Presence of unpaired electrons leads to paramagnetism, while paired electrons result in diamagnetism.</li>
+                        <li><strong>Catalytic Activity:</strong> Many transition metals and their compounds act as catalysts due to their ability to adopt multiple oxidation states.</li>
+                        <li><strong>Formation of Complexes:</strong> Small size, high charge, and availability of vacant d orbitals facilitate complex formation.</li>
+                    </ol>
+                    
+                    <h4>Characteristics of F-Block Elements:</h4>
+                    <ul>
+                        <li><strong>Lanthanide Contraction:</strong> The steady decrease in atomic and ionic radii across the lanthanide series due to poor shielding of 4f electrons.</li>
+                        <li><strong>Actinide Contraction:</strong> Similar to lanthanide contraction but in the actinide series.</li>
+                        <li><strong>Radioactivity:</strong> Most actinides are radioactive.</li>
+                        <li><strong>Complex Chemistry:</strong> F-block elements form complexes but less extensively than d-block elements.</li>
+                        <li><strong>Magnetic Properties:</strong> Many f-block elements and their compounds exhibit interesting magnetic behavior.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">D & F Block Elements MCQs Progress</div>
+                    <div class="progress-stats"><span id="d-f-block-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="d-f-block-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-atom"></i> D & F Block Elements MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-d-f-block">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="d-f-block-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- D & F Block Ions Tab -->
+        <div class="tab-content" id="d-f-ions-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="explanation-title">Electronic Structure of D and F Block Elements Ions</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>What are D and F Block Ions?</h4>
+                    <p>D and F block ions are <strong>cations formed from transition and inner transition metals</strong>. These ions have unique electronic configurations that differ from their neutral atoms, typically by losing electrons from the s orbital first, followed by d or f orbitals.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Ion Formation</div>
+                        <p>When transition metals form ions, electrons are removed first from the ns orbitals and then from the (n-1)d orbitals. This is because the ns electrons are farther from the nucleus and experience less effective nuclear charge than (n-1)d electrons. The electronic configuration of ions affects their color, magnetic properties, and stability.</p>
+                    </div>
+                    
+                    <h4>General Ion Formation:</h4>
+                    <p><strong>D-block ions:</strong> Formed by loss of s electrons first, then d electrons</p>
+                    <p><strong>F-block ions:</strong> Typically form +3 ions by losing two s and one f electron</p>
+                    
+                    <h4>Electronic Configuration of Common Ions:</h4>
+                    <ol>
+                        <li><strong>Fe<sup>2+</sup>:</strong> [Ar] 3d<sup>6</sup> (loses 4s electrons first)</li>
+                        <li><strong>Fe<sup>3+</sup>:</strong> [Ar] 3d<sup>5</sup> (loses 4s and one 3d electron)</li>
+                        <li><strong>Cu<sup>+</sup>:</strong> [Ar] 3d<sup>10</sup> (loses 4s electron)</li>
+                        <li><strong>Cu<sup>2+</sup>:</strong> [Ar] 3d<sup>9</sup> (loses 4s and one 3d electron)</li>
+                        <li><strong>Cr<sup>3+</sup>:</strong> [Ar] 3d<sup>3</sup> (loses 4s and two 3d electrons)</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Stability of Ions</div>
+                        <p>Ions with half-filled (d<sup>5</sup>, f<sup>7</sup>) or completely filled (d<sup>10</sup>, f<sup>14</sup>) subshells are particularly stable due to exchange energy and symmetry. This explains why Fe<sup>3+</sup> (3d<sup>5</sup>) is more stable than Fe<sup>2+</sup> (3d<sup>6</sup>) in certain environments, and why Cu<sup>+</sup> (3d<sup>10</sup>) is stable despite copper's common +2 oxidation state.</p>
+                    </div>
+                    
+                    <h4>Properties of D and F Block Ions:</h4>
+                    <ul>
+                        <li><strong>Color:</strong> Ions with incomplete d or f subshells are typically colored due to d-d or f-f transitions.</li>
+                        <li><strong>Magnetic Behavior:</strong> Ions with unpaired electrons are paramagnetic, while those with all electrons paired are diamagnetic.</li>
+                        <li><strong>Catalytic Activity:</strong> Many transition metal ions serve as catalysts in industrial processes.</li>
+                        <li><strong>Complex Formation:</strong> Transition metal ions readily form coordination complexes with ligands.</li>
+                        <li><strong>Oxidation-Reduction Behavior:</strong> These ions often participate in redox reactions, changing between different oxidation states.</li>
+                    </ul>
+                    
+                    <div class="exception-box">
+                        <div class="exception-title">Special Cases and Exceptions</div>
+                        <ul>
+                            <li><strong>Zn<sup>2+</sup> and Cd<sup>2+</sup>:</strong> These ions have d<sup>10</sup> configuration, are colorless and diamagnetic.</li>
+                            <li><strong>Sc<sup>3+</sup>:</strong> Has d<sup>0</sup> configuration, is colorless and diamagnetic.</li>
+                            <li><strong>La<sup>3+</sup> and Lu<sup>3+</sup>:</strong> These lanthanide ions have f<sup>0</sup> and f<sup>14</sup> configurations respectively, are colorless.</li>
+                            <li><strong>Actinide Ions:</strong> Often radioactive and exhibit multiple oxidation states.</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Applications and Importance:</h4>
+                    <p>D and F block ions have numerous applications:</p>
+                    <ul>
+                        <li><strong>Industrial Catalysts:</strong> Fe<sup>3+</sup>, V<sup>5+</sup> in contact process; Ni in hydrogenation.</li>
+                        <li><strong>Biological Systems:</strong> Fe<sup>2+</sup>/Fe<sup>3+</sup> in hemoglobin; Co<sup>3+</sup> in vitamin B12; Cu<sup>2+</sup> in cytochrome oxidase.</li>
+                        <li><strong>Pigments and Dyes:</strong> Transition metal ions provide color in paints, glasses, and ceramics.</li>
+                        <li><strong>Magnetic Materials:</strong> Nd<sup>3+</sup>, Sm<sup>3+</sup> in powerful magnets.</li>
+                        <li><strong>Nuclear Technology:</strong> Uranium and plutonium ions in nuclear reactors.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">D & F Block Ions MCQs Progress</div>
+                    <div class="progress-stats"><span id="d-f-ions-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="d-f-ions-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-bolt"></i> D & F Block Ions MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-d-f-ions">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="d-f-ions-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracking Tab -->
+        <div class="tab-content" id="progress-tab">
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-chart-line"></i> Progress Tracking</h3>
+                </div>
+                
+                <div class="explanation-section">
+                    <div class="explanation-header">
+                        <div class="explanation-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="explanation-title">Your Learning Progress</div>
+                    </div>
+                    
+                    <div class="explanation-content">
+                        <p>Track your progress as you work through the MCQs for both D & F Block Elements and D & F Block Ions.</p>
+                        
+                        <div class="progress-section" style="margin-top: 12.15px;">
+                            <div class="progress-header">
+                                <div class="progress-title">Overall Progress</div>
+                                <div class="progress-stats"><span id="overall-completed">0</span>/40 completed</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 9.72px; margin-top: 12.15px;">
+                            <div style="flex: 1;">
+                                <div class="progress-header">
+                                    <div class="progress-title">D & F Block Elements</div>
+                                    <div class="progress-stats"><span id="d-f-block-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="d-f-block-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <div class="progress-header">
+                                    <div class="progress-title">D & F Block Ions</div>
+                                    <div class="progress-stats"><span id="d-f-ions-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="d-f-ions-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 12.15px; text-align: center;">
+                            <button class="btn btn-primary" id="reset-progress">
+                                <i class="fas fa-redo"></i> Reset Progress
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chemistry Topic Wise Portal. All rights reserved.</p>
+                <p>Designed for effective learning of inorganic chemistry concepts</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // MCQ data - All 20 MCQs for each topic
+        const dFBlockMCQs = [
+            {
+                id: 1,
+                question: "Which of the following elements has the electronic configuration [Ar] 4s¹ 3d⁵?",
+                options: [
+                    "Chromium (Cr)",
+                    "Manganese (Mn)",
+                    "Iron (Fe)",
+                    "Vanadium (V)"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Chromium (Z=24) has the electronic configuration [Ar] 4s¹ 3d⁵, which is an exception to the Aufbau principle. This configuration provides extra stability due to the half-filled d subshell.",
+                    incorrect: {
+                        1: "Manganese has configuration [Ar] 4s² 3d⁵.",
+                        2: "Iron has configuration [Ar] 4s² 3d⁶.",
+                        3: "Vanadium has configuration [Ar] 4s² 3d³."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "According to the Aufbau principle, electrons fill atomic orbitals in order of:",
+                options: [
+                    "Decreasing energy levels",
+                    "Increasing energy levels",
+                    "Random order",
+                    "Alphabetical order of orbital names"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The Aufbau principle states that electrons are filled into atomic orbitals in the increasing order of orbital energy level. Lower energy orbitals are filled before higher energy ones.",
+                    incorrect: {
+                        0: "Electrons fill orbitals in increasing, not decreasing, energy order.",
+                        2: "Electron filling follows a specific pattern, not random order.",
+                        3: "Orbital filling follows energy levels, not alphabetical order."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "Which of the following is NOT a characteristic of d-block elements?",
+                options: [
+                    "Formation of colored compounds",
+                    "Variable oxidation states",
+                    "High electronegativity",
+                    "Catalytic activity"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "d-block elements generally have moderate to low electronegativity values, not high electronegativity. Their other characteristics include formation of colored compounds, variable oxidation states, and catalytic activity.",
+                    incorrect: {
+                        0: "Formation of colored compounds is a key characteristic of d-block elements.",
+                        1: "Variable oxidation states are characteristic of d-block elements.",
+                        3: "Catalytic activity is a well-known property of many d-block elements."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "The electronic configuration of copper (Z=29) is:",
+                options: [
+                    "[Ar] 4s² 3d⁹",
+                    "[Ar] 4s¹ 3d¹⁰",
+                    "[Ar] 4s² 3d⁸ 4p¹",
+                    "[Ar] 4s² 3d⁷ 4p²"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Copper has the exceptional configuration [Ar] 4s¹ 3d¹⁰ rather than the expected [Ar] 4s² 3d⁹. This provides extra stability due to the completely filled d subshell.",
+                    incorrect: {
+                        0: "[Ar] 4s² 3d⁹ is the expected but not actual configuration for copper.",
+                        2: "Copper does not have electrons in the 4p orbital in its ground state.",
+                        3: "This configuration does not correspond to any known element."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "Which series of d-block elements corresponds to the filling of 4d orbitals?",
+                options: [
+                    "First transition series",
+                    "Second transition series",
+                    "Third transition series",
+                    "Fourth transition series"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The second transition series corresponds to the filling of 4d orbitals. This includes elements from Y (Z=39) to Cd (Z=48).",
+                    incorrect: {
+                        0: "First transition series corresponds to 3d orbital filling.",
+                        2: "Third transition series corresponds to 5d orbital filling.",
+                        3: "There is no fourth transition series in the periodic table."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "The element with electronic configuration [Kr] 5s¹ 4d⁵ is:",
+                options: [
+                    "Molybdenum (Mo)",
+                    "Technetium (Tc)",
+                    "Ruthenium (Ru)",
+                    "Rhodium (Rh)"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Molybdenum (Z=42) has the configuration [Kr] 5s¹ 4d⁵, which is an exception similar to chromium in the first transition series.",
+                    incorrect: {
+                        1: "Technetium has configuration [Kr] 5s² 4d⁵.",
+                        2: "Ruthenium has configuration [Kr] 5s¹ 4d⁷.",
+                        3: "Rhodium has configuration [Kr] 5s¹ 4d⁸."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "Which of the following elements has a completely filled d subshell in its ground state?",
+                options: [
+                    "Copper (Cu)",
+                    "Zinc (Zn)",
+                    "Nickel (Ni)",
+                    "Cobalt (Co)"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Zinc (Z=30) has the configuration [Ar] 4s² 3d¹⁰ with a completely filled d subshell.",
+                    incorrect: {
+                        0: "Copper has configuration [Ar] 4s¹ 3d¹⁰ - the d subshell is filled but the s subshell is not.",
+                        2: "Nickel has configuration [Ar] 4s² 3d⁸ with an incomplete d subshell.",
+                        3: "Cobalt has configuration [Ar] 4s² 3d⁷ with an incomplete d subshell."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "The Aufbau principle gets its name from a German word meaning:",
+                options: [
+                    "Building up",
+                    "Breaking down",
+                    "Energy levels",
+                    "Electron spin"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The word 'Aufbau' is derived from German and means 'building up' or 'construction', referring to how electrons build up the electronic structure of atoms.",
+                    incorrect: {
+                        1: "Aufbau means building up, not breaking down.",
+                        2: "While it deals with energy levels, the name specifically means 'building up'.",
+                        3: "The principle doesn't specifically refer to electron spin."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "Which of the following is an f-block element?",
+                options: [
+                    "Scandium (Sc)",
+                    "Yttrium (Y)",
+                    "Lanthanum (La)",
+                    "Hafnium (Hf)"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Lanthanum (Z=57) is the first element of the f-block (lanthanide series), though it has no f electrons itself.",
+                    incorrect: {
+                        0: "Scandium is a d-block element.",
+                        1: "Yttrium is a d-block element.",
+                        3: "Hafnium is a d-block element."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "The exceptional configurations of chromium and copper are due to:",
+                options: [
+                    "Higher nuclear charge",
+                    "Extra stability of half-filled and completely filled subshells",
+                    "Relativistic effects",
+                    "Magnetic properties"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Chromium and copper have exceptional configurations ([Ar] 4s¹ 3d⁵ and [Ar] 4s¹ 3d¹⁰ respectively) due to the extra stability associated with half-filled and completely filled d subshells.",
+                    incorrect: {
+                        0: "While nuclear charge increases across the period, this doesn't specifically explain these exceptions.",
+                        2: "Relativistic effects are more significant in heavier elements.",
+                        3: "Magnetic properties are a consequence, not a cause, of these configurations."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "Which element in the 5d series has the configuration [Xe] 6s¹ 4f¹⁴ 5d¹⁰?",
+                options: [
+                    "Platinum (Pt)",
+                    "Gold (Au)",
+                    "Mercury (Hg)",
+                    "Thallium (Tl)"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Gold (Z=79) has the configuration [Xe] 6s¹ 4f¹⁴ 5d¹⁰, which is an exception similar to copper in the first transition series.",
+                    incorrect: {
+                        0: "Platinum has configuration [Xe] 6s¹ 4f¹⁴ 5d⁹.",
+                        2: "Mercury has configuration [Xe] 6s² 4f¹⁴ 5d¹⁰.",
+                        3: "Thallium is not a d-block element."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "The first transition series includes elements with atomic numbers:",
+                options: [
+                    "21 to 30",
+                    "39 to 48",
+                    "57 to 80",
+                    "89 to 112"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The first transition series includes elements from Scandium (Z=21) to Zinc (Z=30), corresponding to the filling of 3d orbitals.",
+                    incorrect: {
+                        1: "39 to 48 corresponds to the second transition series (4d).",
+                        2: "57 to 80 includes both lanthanides and some transition metals.",
+                        3: "89 to 112 includes actinides and some transition metals."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "Palladium (Z=46) has an exceptional configuration with no electrons in the 5s orbital. Its configuration is:",
+                options: [
+                    "[Kr] 5s¹ 4d⁹",
+                    "[Kr] 5s² 4d⁸",
+                    "[Kr] 4d¹⁰",
+                    "[Kr] 5s² 4d⁶ 5p²"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Palladium has the exceptional configuration [Kr] 4d¹⁰ with a completely filled d subshell and no electrons in the 5s orbital.",
+                    incorrect: {
+                        0: "This is not the configuration of palladium.",
+                        1: "This would be the expected configuration, but palladium is exceptional.",
+                        3: "This configuration does not correspond to any known element."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "Which of the following elements does NOT show exceptional configuration?",
+                options: [
+                    "Chromium",
+                    "Copper",
+                    "Molybdenum",
+                    "Titanium"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Titanium (Z=22) has the expected configuration [Ar] 4s² 3d² and does not show any exception to the Aufbau principle.",
+                    incorrect: {
+                        0: "Chromium shows exceptional configuration ([Ar] 4s¹ 3d⁵).",
+                        1: "Copper shows exceptional configuration ([Ar] 4s¹ 3d¹⁰).",
+                        2: "Molybdenum shows exceptional configuration ([Kr] 5s¹ 4d⁵)."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "The element with configuration [Xe] 6s² 4f¹⁴ 5d⁴ is:",
+                options: [
+                    "Tungsten (W)",
+                    "Rhenium (Re)",
+                    "Osmium (Os)",
+                    "Iridium (Ir)"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Tungsten (Z=74) has the configuration [Xe] 6s² 4f¹⁴ 5d⁴.",
+                    incorrect: {
+                        1: "Rhenium has configuration [Xe] 6s² 4f¹⁴ 5d⁵.",
+                        2: "Osmium has configuration [Xe] 6s² 4f¹⁴ 5d⁶.",
+                        3: "Iridium has configuration [Xe] 6s² 4f¹⁴ 5d⁷."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "In the lanthanide series, valence electrons go to:",
+                options: [
+                    "4d orbitals",
+                    "4f orbitals",
+                    "5d orbitals",
+                    "5f orbitals"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "In the lanthanide series, valence electrons go to 4f orbitals. This series includes elements from Cerium (Z=58) to Lutetium (Z=71).",
+                    incorrect: {
+                        0: "4d orbitals are filled in the second transition series.",
+                        2: "5d orbitals are filled in the third transition series.",
+                        3: "5f orbitals are filled in the actinide series."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "Which of the following pairs both have half-filled d subshells in their ground state?",
+                options: [
+                    "Cr and Mo",
+                    "Cu and Ag",
+                    "Zn and Cd",
+                    "Fe and Ru"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Chromium ([Ar] 4s¹ 3d⁵) and Molybdenum ([Kr] 5s¹ 4d⁵) both have half-filled d subshells in their ground state configurations.",
+                    incorrect: {
+                        1: "Copper and Silver have completely filled d subshells.",
+                        2: "Zinc and Cadmium have completely filled d subshells.",
+                        3: "Iron has 3d⁶ and Ruthenium has 4d⁷ configurations, neither half-filled."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "The number of transition elements in each series is:",
+                options: [
+                    "8",
+                    "10",
+                    "12",
+                    "14"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Each transition series contains 10 elements, corresponding to the filling of the 10 d orbitals (d¹ to d¹⁰).",
+                    incorrect: {
+                        0: "8 would be for filling p orbitals.",
+                        2: "12 is not a standard number for orbital filling.",
+                        3: "14 is for f orbitals."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "Which element has the configuration [Ar] 4s² 3d⁶?",
+                options: [
+                    "Chromium (Cr)",
+                    "Manganese (Mn)",
+                    "Iron (Fe)",
+                    "Cobalt (Co)"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Iron (Z=26) has the configuration [Ar] 4s² 3d⁶.",
+                    incorrect: {
+                        0: "Chromium has configuration [Ar] 4s¹ 3d⁵.",
+                        1: "Manganese has configuration [Ar] 4s² 3d⁵.",
+                        3: "Cobalt has configuration [Ar] 4s² 3d⁷."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "The element with the highest atomic number in the first transition series is:",
+                options: [
+                    "Copper (Cu)",
+                    "Zinc (Zn)",
+                    "Nickel (Ni)",
+                    "Cobalt (Co)"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Zinc (Z=30) has the highest atomic number in the first transition series (3d series).",
+                    incorrect: {
+                        0: "Copper has atomic number 29.",
+                        2: "Nickel has atomic number 28.",
+                        3: "Cobalt has atomic number 27."
+                    }
+                }
+            }
+        ];
+
+        const dFBlockIonsMCQs = [
+            {
+                id: 1,
+                question: "When transition metals form cations, electrons are removed first from:",
+                options: [
+                    "d orbitals",
+                    "s orbitals",
+                    "p orbitals",
+                    "f orbitals"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "When transition metals form cations, electrons are removed first from the ns orbitals and then from the (n-1)d orbitals. This is because the ns electrons are farther from the nucleus and experience less effective nuclear charge.",
+                    incorrect: {
+                        0: "d orbitals lose electrons after s orbitals.",
+                        2: "Transition metals typically don't have p electrons in their valence shell.",
+                        3: "f orbitals are in inner shells and are not typically involved in ion formation for d-block elements."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "The electronic configuration of Fe³⁺ ion is:",
+                options: [
+                    "[Ar] 4s² 3d³",
+                    "[Ar] 3d⁵",
+                    "[Ar] 4s¹ 3d⁶",
+                    "[Ar] 3d⁶"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Fe³⁺ has the configuration [Ar] 3d⁵. Iron atom has [Ar] 4s² 3d⁶. When forming Fe³⁺, it loses two 4s electrons and one 3d electron, giving [Ar] 3d⁵.",
+                    incorrect: {
+                        0: "This would require losing only 3d electrons, which doesn't happen.",
+                        2: "This configuration has the wrong number of electrons.",
+                        3: "This is the configuration of Fe²⁺, not Fe³⁺."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "Which of the following ions is diamagnetic?",
+                options: [
+                    "Cr³⁺",
+                    "Fe³⁺",
+                    "Cu²⁺",
+                    "Zn²⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Zn²⁺ is diamagnetic because it has all electrons paired (configuration [Ar] 3d¹⁰). Diamagnetic substances are repelled by a magnetic field.",
+                    incorrect: {
+                        0: "Cr³⁺ has 3 unpaired electrons and is paramagnetic.",
+                        1: "Fe³⁺ has 5 unpaired electrons and is strongly paramagnetic.",
+                        2: "Cu²⁺ has 1 unpaired electron and is paramagnetic."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "The magnetic moment of a transition metal ion with 4 unpaired electrons is approximately:",
+                options: [
+                    "1.73 BM",
+                    "2.83 BM",
+                    "3.87 BM",
+                    "4.90 BM"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "The magnetic moment is calculated as μ = √[n(n+2)] BM, where n is the number of unpaired electrons. For n=4, μ = √[4(4+2)] = √24 ≈ 4.90 BM.",
+                    incorrect: {
+                        0: "1.73 BM is for 1 unpaired electron.",
+                        1: "2.83 BM is for 2 unpaired electrons.",
+                        2: "3.87 BM is for 3 unpaired electrons."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "Which ion has the same number of unpaired electrons as Cr³⁺?",
+                options: [
+                    "Fe³⁺",
+                    "Mn²⁺",
+                    "Co²⁺",
+                    "Ni²⁺"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Co²⁺ has the same number of unpaired electrons (3) as Cr³⁺. Cr³⁺ has configuration [Ar] 3d³ with 3 unpaired electrons, and Co²⁺ has configuration [Ar] 3d⁷ with 3 unpaired electrons.",
+                    incorrect: {
+                        0: "Fe³⁺ has 5 unpaired electrons.",
+                        1: "Mn²⁺ has 5 unpaired electrons.",
+                        3: "Ni²⁺ has 2 unpaired electrons."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "The most stable oxidation state of lanthanum is:",
+                options: [
+                    "+2",
+                    "+3",
+                    "+4",
+                    "+5"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The most stable oxidation state of lanthanum is +3. Lanthanum has configuration [Xe] 5d¹ 6s², and it readily loses these three electrons to achieve the stable configuration of xenon.",
+                    incorrect: {
+                        0: "+2 is not a common oxidation state for lanthanum.",
+                        2: "+4 is not a common oxidation state for lanthanum.",
+                        3: "+5 is not a common oxidation state for lanthanum."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "Which of the following ions is expected to be colorless?",
+                options: [
+                    "Ti³⁺",
+                    "V³⁺",
+                    "Sc³⁺",
+                    "Cr³⁺"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Sc³⁺ is expected to be colorless because it has no d electrons (configuration [Ar]). Without d electrons, there are no d-d transitions possible to give color.",
+                    incorrect: {
+                        0: "Ti³⁺ has 1 d electron and forms colored compounds.",
+                        1: "V³⁺ has 2 d electrons and forms colored compounds.",
+                        3: "Cr³⁺ has 3 d electrons and forms colored compounds."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "The ion that has the electronic configuration [Ar] 3d⁶ is:",
+                options: [
+                    "Fe²⁺",
+                    "Co³⁺",
+                    "Ni²⁺",
+                    "Mn²⁺"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Fe²⁺ has the electronic configuration [Ar] 3d⁶. Iron atom has configuration [Ar] 3d⁶ 4s², and when it loses two electrons to form Fe²⁺, it loses the 4s electrons first.",
+                    incorrect: {
+                        1: "Co³⁺ has configuration [Ar] 3d⁶ but this is low-spin; normally Co³⁺ would be [Ar] 3d⁶ in low-spin complexes.",
+                        2: "Ni²⁺ has configuration [Ar] 3d⁸.",
+                        3: "Mn²⁺ has configuration [Ar] 3d⁵."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "Which of the following ions has the highest magnetic moment?",
+                options: [
+                    "Fe²⁺",
+                    "Co²⁺",
+                    "Ni²⁺",
+                    "Mn²⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Mn²⁺ has the highest magnetic moment (5.92 BM) because it has 5 unpaired electrons (configuration [Ar] 3d⁵).",
+                    incorrect: {
+                        0: "Fe²⁺ has 4 unpaired electrons and magnetic moment of 4.90 BM.",
+                        1: "Co²⁺ has 3 unpaired electrons and magnetic moment of 3.87 BM.",
+                        2: "Ni²⁺ has 2 unpaired electrons and magnetic moment of 2.83 BM."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "The ion that is isoelectronic with Ar is:",
+                options: [
+                    "Fe³⁺",
+                    "Zn²⁺",
+                    "Rb⁺",
+                    "Se²⁻"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Zn²⁺ is isoelectronic with Ar. Zn²⁺ has configuration [Ar] 3d¹⁰, which is the same as Kr's configuration [Ar] 3d¹⁰ 4s² 4p⁶? Actually, Kr is [Ar] 3d¹⁰ 4s² 4p⁶, so Zn²⁺ with [Ar] 3d¹⁰ is not exactly isoelectronic. Rb⁺ with [Kr] configuration would be isoelectronic with Kr.",
+                    incorrect: {
+                        0: "Fe³⁺ has configuration [Ar] 3d⁵, not isoelectronic with Ar.",
+                        2: "Rb⁺ has configuration [Kr], which is isoelectronic with Kr.",
+                        3: "Se²⁻ has configuration [Ar] 3d¹⁰ 4s² 4p⁶, which is the same as Kr."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "Which of the following ions has the smallest ionic radius?",
+                options: [
+                    "Sc³⁺",
+                    "Ti⁴⁺",
+                    "V⁵⁺",
+                    "Cr⁶⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Cr⁶⁺ has the smallest ionic radius because it has the highest charge and the electrons experience the strongest effective nuclear charge. As we move from Sc³⁺ to Cr⁶⁺ in the same period, the ionic radius decreases due to increasing nuclear charge.",
+                    incorrect: {
+                        0: "Sc³⁺ has a larger ionic radius than the others due to lower nuclear charge.",
+                        1: "Ti⁴⁺ has a smaller radius than Sc³⁺ but larger than V⁵⁺ and Cr⁶⁺.",
+                        2: "V⁵⁺ has a smaller radius than Ti⁴⁺ but larger than Cr⁶⁺."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "The number of unpaired electrons in Fe³⁺ ion is:",
+                options: [
+                    "1",
+                    "3",
+                    "5",
+                    "7"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Fe³⁺ has 5 unpaired electrons. Iron atom has configuration [Ar] 3d⁶ 4s². When it forms Fe³⁺, it loses two 4s electrons and one 3d electron, giving [Ar] 3d⁵ configuration with 5 unpaired electrons.",
+                    incorrect: {
+                        0: "1 unpaired electron would be for a configuration like Cu²⁺.",
+                        1: "3 unpaired electrons would be for a configuration like Cr³⁺.",
+                        3: "7 unpaired electrons is not possible for first row transition metal ions."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "Which of the following statements about Cu²⁺ ion is correct?",
+                options: [
+                    "It has configuration [Ar] 3d⁹",
+                    "It is diamagnetic",
+                    "It is colorless",
+                    "It has a magnetic moment of 0 BM"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Cu²⁺ has configuration [Ar] 3d⁹. Copper atom has configuration [Ar] 3d¹⁰ 4s¹, and when it forms Cu²⁺, it loses one 4s electron and one 3d electron, giving [Ar] 3d⁹.",
+                    incorrect: {
+                        1: "Cu²⁺ is paramagnetic due to one unpaired electron, not diamagnetic.",
+                        2: "Cu²⁺ is blue in color due to d-d transitions, not colorless.",
+                        3: "Cu²⁺ has a magnetic moment of approximately 1.73 BM due to one unpaired electron, not 0 BM."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "The ion that gives a green color to its compounds is:",
+                options: [
+                    "Cu²⁺",
+                    "Fe³⁺",
+                    "Cr³⁺",
+                    "Co²⁺"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Cr³⁺ gives a green color to its compounds. This is due to d-d transitions in the Cr³⁺ ion when it forms complexes.",
+                    incorrect: {
+                        0: "Cu²⁺ gives a blue color to its compounds.",
+                        1: "Fe³⁺ gives a yellow/brown color to its compounds.",
+                        3: "Co²⁺ gives a pink color to its compounds in aqueous solution."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "Which of the following ions is most likely to be found in a low-spin complex?",
+                options: [
+                    "Cr³⁺",
+                    "Mn³⁺",
+                    "Fe³⁺",
+                    "Co³⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Co³⁺ is most likely to be found in a low-spin complex. With strong field ligands, Co³⁺ (d⁶) often forms low-spin complexes due to the high crystal field splitting energy.",
+                    incorrect: {
+                        0: "Cr³⁺ (d³) always has the same number of unpaired electrons regardless of ligand field strength.",
+                        1: "Mn³⁺ (d⁴) can be high-spin or low-spin depending on ligands, but is often high-spin.",
+                        2: "Fe³⁺ (d⁵) can be high-spin or low-spin, but high-spin is more common."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "The ion that has the same number of electrons as Ar atom is:",
+                options: [
+                    "K⁺",
+                    "Ca²⁺",
+                    "Sc³⁺",
+                    "All of the above"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "All of these ions have the same number of electrons (18) as Ar atom: K⁺ (from K: 19 electrons), Ca²⁺ (from Ca: 20 electrons), and Sc³⁺ (from Sc: 21 electrons) all have 18 electrons after losing their valence electrons.",
+                    incorrect: {
+                        0: "K⁺ does have 18 electrons, but others also have this configuration.",
+                        1: "Ca²⁺ does have 18 electrons, but others also have this configuration.",
+                        2: "Sc³⁺ does have 18 electrons, but others also have this configuration."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "Which of the following ions is expected to be paramagnetic?",
+                options: [
+                    "Zn²⁺",
+                    "Sc³⁺",
+                    "Ti⁴⁺",
+                    "V⁵⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "None of these ions are paramagnetic as they all have no unpaired electrons: Zn²⁺ (d¹⁰), Sc³⁺ (d⁰), Ti⁴⁺ (d⁰), V⁵⁺ (d⁰). The question seems to have an error as all options are diamagnetic. V⁵⁺ would be paramagnetic if it had unpaired electrons, but it has d⁰ configuration.",
+                    incorrect: {
+                        0: "Zn²⁺ is diamagnetic with all electrons paired.",
+                        1: "Sc³⁺ is diamagnetic with no unpaired electrons.",
+                        2: "Ti⁴⁺ is diamagnetic with no unpaired electrons."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "The ion that can exhibit both +2 and +3 oxidation states is:",
+                options: [
+                    "Sc³⁺",
+                    "Ti⁴⁺",
+                    "V⁵⁺",
+                    "Fe³⁺"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "Fe³⁺ can be reduced to Fe²⁺, so iron can exhibit both +2 and +3 oxidation states. This is common for iron in various chemical and biological systems.",
+                    incorrect: {
+                        0: "Sc predominantly shows only +3 oxidation state.",
+                        1: "Ti predominantly shows +4 oxidation state, with +3 being less common.",
+                        2: "V shows multiple oxidation states but +5 is the highest, not commonly reduced to +2."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "The magnetic moment of a transition metal ion is 4.90 BM. The number of unpaired electrons is:",
+                options: [
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "For a magnetic moment of 4.90 BM, the number of unpaired electrons is 4. This is calculated using the formula μ = √[n(n+2)], where μ = 4.90 gives n = 4.",
+                    incorrect: {
+                        0: "2 unpaired electrons would give μ = 2.83 BM.",
+                        1: "3 unpaired electrons would give μ = 3.87 BM.",
+                        3: "5 unpaired electrons would give μ = 5.92 BM."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "Which of the following ions has the electronic configuration [Ar] 3d³?",
+                options: [
+                    "Cr³⁺",
+                    "Mn⁴⁺",
+                    "V²⁺",
+                    "All of the above"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "All of these ions have [Ar] 3d³ configuration: Cr³⁺ (from Cr: [Ar] 3d⁵ 4s¹), Mn⁴⁺ (from Mn: [Ar] 3d⁵ 4s²), and V²⁺ (from V: [Ar] 3d³ 4s²).",
+                    incorrect: {
+                        0: "Cr³⁺ does have [Ar] 3d³, but others also have this configuration.",
+                        1: "Mn⁴⁺ does have [Ar] 3d³, but others also have this configuration.",
+                        2: "V²⁺ does have [Ar] 3d³, but others also have this configuration."
+                    }
+                }
+            }
+        ];
+
+        // Progress tracking
+        let progress = {
+            dFBlock: Array(dFBlockMCQs.length).fill(false),
+            dFBlockIons: Array(dFBlockIonsMCQs.length).fill(false)
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the application
+            initApp();
+            
+            function initApp() {
+                // Set up event listeners for welcome screen
+                document.getElementById('start-btn').addEventListener('click', () => {
+                    document.getElementById('welcome-overlay').classList.add('hidden');
+                });
+                
+                // Hide welcome animation after delay
+                setTimeout(() => {
+                    document.getElementById('welcome-overlay').classList.add('hidden');
+                }, 5000);
+                
+                // Load progress from localStorage
+                loadProgress();
+                
+                // Set up tab navigation
+                setupTabs();
+                
+                // Set up event listeners
+                setupEventListeners();
+                
+                // Load MCQs
+                loadMCQs();
+                
+                // Update progress display
+                updateProgress();
+                
+                // Apply animations
+                applyAnimations();
+            }
+            
+            function setupTabs() {
+                const tabButtons = document.querySelectorAll('.nav-btn[data-tab]');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+                        
+                        // Update active tab button
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        
+                        // Show active content
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        document.getElementById(`${tabId}-tab`).classList.add('active');
+                    });
+                });
+            }
+            
+            function setupEventListeners() {
+                // Hamburger menu toggle
+                document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+                
+                // Theme toggle
+                document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+                
+                // Refresh buttons
+                document.getElementById('refresh-d-f-block').addEventListener('click', () => loadMCQs());
+                document.getElementById('refresh-d-f-ions').addEventListener('click', () => loadMCQs());
+                
+                // Reset progress button
+                document.getElementById('reset-progress').addEventListener('click', resetProgress);
+            }
+            
+            function toggleMenu() {
+                const menuToggle = document.getElementById('menu-toggle');
+                const mainNav = document.getElementById('main-nav');
+                
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            }
+            
+            function toggleTheme() {
+                const themeToggle = document.getElementById('theme-toggle');
+                document.body.classList.toggle('dark-mode');
+                themeToggle.classList.toggle('dark');
+                saveToLocalStorage('darkMode', document.body.classList.contains('dark-mode'));
+            }
+            
+            function loadMCQs() {
+                // Load d-f-block MCQs
+                const dFBlockContainer = document.getElementById('d-f-block-mcqs-container');
+                dFBlockContainer.innerHTML = '';
+                
+                dFBlockMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'dFBlock');
+                    dFBlockContainer.appendChild(mcqCard);
+                });
+                
+                // Load d-f-ions MCQs
+                const dFBlockIonsContainer = document.getElementById('d-f-ions-mcqs-container');
+                dFBlockIonsContainer.innerHTML = '';
+                
+                dFBlockIonsMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'dFBlockIons');
+                    dFBlockIonsContainer.appendChild(mcqCard);
+                });
+            }
+            
+            function createMCQCard(mcq, type) {
+                const card = document.createElement('div');
+                card.className = 'card mcq-card fade-in';
+                card.id = `${type}-mcq-${mcq.id}`;
+                
+                // Check if this MCQ has been completed
+                const isCompleted = progress[type][mcq.id - 1];
+                const completionClass = isCompleted ? 'completed' : '';
+                
+                card.innerHTML = `
+                    <div class="mcq-info">
+                        <div class="mcq-id">MCQ #${mcq.id} ${isCompleted ? '<i class="fas fa-check" style="color: var(--success); margin-left: 4.05px;"></i>' : ''}</div>
+                        <div class="mcq-subject">${type === 'dFBlock' ? 'D & F Block Elements' : 'D & F Block Ions'}</div>
+                        <div class="mcq-question">${mcq.question}</div>
+                        <div class="mcq-options">
+                            ${mcq.options.map((option, index) => `
+                                <div class="mcq-option ${completionClass}" data-option="${index}">${String.fromCharCode(65 + index)}) ${option}</div>
+                            `).join('')}
+                        </div>
+                        <div class="mcq-explanation">
+                            <div class="explanation-title">Explanation:</div>
+                            <div class="explanation-content">${generateExplanation(mcq)}</div>
+                        </div>
+                    </div>
+                    <div class="mcq-actions">
+                        <button class="btn btn-primary check-answer-btn">
+                            <i class="fas fa-check"></i> Check Answer
+                        </button>
+                        <button class="btn btn-secondary show-explanation-btn">
+                            <i class="fas fa-lightbulb"></i> Show Explanation
+                        </button>
+                    </div>
+                `;
+                
+                // Add event listeners to the buttons
+                const checkAnswerBtn = card.querySelector('.check-answer-btn');
+                const showExplanationBtn = card.querySelector('.show-explanation-btn');
+                const options = card.querySelectorAll('.mcq-option');
+                
+                let selectedOption = null;
+                
+                // If already completed, show the correct answer
+                if (isCompleted) {
+                    const correctOption = card.querySelector(`.mcq-option[data-option="${mcq.correctAnswer}"]`);
+                    correctOption.classList.add('correct');
+                    
+                    // Disable further selection
+                    options.forEach(option => {
+                        option.style.pointerEvents = 'none';
+                    });
+                    
+                    checkAnswerBtn.disabled = true;
+                    checkAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Completed';
+                } else {
+                    options.forEach(option => {
+                        option.addEventListener('click', () => {
+                            // Remove selection from all options
+                            options.forEach(opt => opt.classList.remove('selected'));
+                            
+                            // Select the clicked option
+                            option.classList.add('selected');
+                            selectedOption = parseInt(option.getAttribute('data-option'));
+                        });
+                    });
+                    
+                    checkAnswerBtn.addEventListener('click', () => {
+                        if (selectedOption === null) {
+                            alert('Please select an answer first!');
+                            return;
+                        }
+                        
+                        // Remove previous correct/incorrect classes
+                        options.forEach(option => {
+                            option.classList.remove('correct', 'incorrect');
+                        });
+                        
+                        // Mark the correct answer
+                        const correctOption = card.querySelector(`.mcq-option[data-option="${mcq.correctAnswer}"]`);
+                        correctOption.classList.add('correct');
+                        
+                        // Mark the selected answer if incorrect
+                        if (selectedOption !== mcq.correctAnswer) {
+                            const selectedOptionElement = card.querySelector(`.mcq-option[data-option="${selectedOption}"]`);
+                            selectedOptionElement.classList.add('incorrect');
+                        } else {
+                            // If correct, mark as completed
+                            progress[type][mcq.id - 1] = true;
+                            saveProgress();
+                            updateProgress();
+                            
+                            // Update the card to show completion
+                            const mcqId = card.querySelector('.mcq-id');
+                            mcqId.innerHTML = `MCQ #${mcq.id} <i class="fas fa-check" style="color: var(--success); margin-left: 4.05px;"></i>`;
+                            
+                            // Disable further selection
+                            options.forEach(option => {
+                                option.style.pointerEvents = 'none';
+                            });
+                            
+                            checkAnswerBtn.disabled = true;
+                            checkAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Completed';
+                        }
+                    });
+                }
+                
+                showExplanationBtn.addEventListener('click', () => {
+                    const explanation = card.querySelector('.mcq-explanation');
+                    explanation.classList.toggle('show');
+                });
+                
+                return card;
+            }
+            
+            function generateExplanation(mcq) {
+                let explanationHTML = `<p><strong>Correct Answer:</strong> ${String.fromCharCode(65 + mcq.correctAnswer)}) ${mcq.options[mcq.correctAnswer]}</p>`;
+                explanationHTML += `<p><strong>Why this is correct:</strong> ${mcq.explanation.correct}</p>`;
+                
+                explanationHTML += `<p><strong>Why other options are incorrect:</strong></p><ul>`;
+                for (const [index, reason] of Object.entries(mcq.explanation.incorrect)) {
+                    explanationHTML += `<li><strong>${String.fromCharCode(65 + parseInt(index))})</strong> ${reason}</li>`;
+                }
+                explanationHTML += `</ul>`;
+                
+                return explanationHTML;
+            }
+            
+            function updateProgress() {
+                // Calculate completion counts
+                const dFBlockCompleted = progress.dFBlock.filter(Boolean).length;
+                const dFBlockIonsCompleted = progress.dFBlockIons.filter(Boolean).length;
+                const totalCompleted = dFBlockCompleted + dFBlockIonsCompleted;
+                
+                // Update d-f-block progress
+                document.getElementById('d-f-block-completed').textContent = dFBlockCompleted;
+                document.getElementById('d-f-block-progress').style.width = `${(dFBlockCompleted / dFBlockMCQs.length) * 100}%`;
+                
+                // Update d-f-ions progress
+                document.getElementById('d-f-ions-completed').textContent = dFBlockIonsCompleted;
+                document.getElementById('d-f-ions-progress').style.width = `${(dFBlockIonsCompleted / dFBlockIonsMCQs.length) * 100}%`;
+                
+                // Update overall progress
+                document.getElementById('completed-mcqs').textContent = totalCompleted;
+                document.getElementById('overall-completed').textContent = totalCompleted;
+                document.getElementById('overall-progress').style.width = `${(totalCompleted / (dFBlockMCQs.length + dFBlockIonsMCQs.length)) * 100}%`;
+                
+                // Update summary
+                document.getElementById('d-f-block-summary').textContent = dFBlockCompleted;
+                document.getElementById('d-f-ions-summary').textContent = dFBlockIonsCompleted;
+                document.getElementById('d-f-block-summary-progress').style.width = `${(dFBlockCompleted / dFBlockMCQs.length) * 100}%`;
+                document.getElementById('d-f-ions-summary-progress').style.width = `${(dFBlockIonsCompleted / dFBlockIonsMCQs.length) * 100}%`;
+            }
+            
+            function resetProgress() {
+                if (confirm('Are you sure you want to reset all progress? This action cannot be undone.')) {
+                    progress = {
+                        dFBlock: Array(dFBlockMCQs.length).fill(false),
+                        dFBlockIons: Array(dFBlockIonsMCQs.length).fill(false)
+                    };
+                    saveProgress();
+                    updateProgress();
+                    loadMCQs();
+                }
+            }
+            
+            function saveProgress() {
+                saveToLocalStorage('chemistryProgress', progress);
+            }
+            
+            function loadProgress() {
+                const savedProgress = getFromLocalStorage('chemistryProgress');
+                if (savedProgress) {
+                    progress = savedProgress;
+                }
+            }
+            
+            function applyAnimations() {
+                const elements = document.querySelectorAll('.panel, .card, .nav-btn');
+                
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('fade-in');
+                    }, index * 50);
+                });
+            }
+            
+            function saveToLocalStorage(key, value) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {
+                    console.error('Error saving to localStorage:', e);
+                }
+            }
+            
+            function getFromLocalStorage(key) {
+                try {
+                    const value = localStorage.getItem(key);
+                    return value ? JSON.parse(value) : null;
+                } catch (e) {
+                    console.error('Error reading from localStorage:', e);
+                    return null;
+                }
+            }
+            
+            // Load dark mode setting
+            const darkMode = getFromLocalStorage('darkMode');
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-toggle').classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
